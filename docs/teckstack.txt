@@ -1,0 +1,19 @@
+**Tech Stack for Fast MVP Development**
+
+* **Framework: Next.js**
+  Industry-standard for React apps with built-in routing and rendering. Optimized for speed and developer productivity.
+
+* **UI Components:Shadcn/ui**
+  Use polished pre-built components. NextUI offers ready-to-use styled components. Shadcn/ui provides copy-paste, themeable components for flexibility.
+
+* **Styling: Tailwind CSS**
+  Utility-first CSS framework. Fast, inline styling inside components. Integrates seamlessly with Next.js and UI libraries.
+
+* **Backend & DB: Firebase**
+  All-in-one backend solution for MVPs. Includes:
+
+  * Firestore: Real-time NoSQL database
+  * Authentication: Quick setup for Email/Google login
+
+* **Deployment: Vercel**
+  One-click deployment platform (by creators of Next.js). Free hosting, auto-deployments, and global CDN for fast access worldwide.
