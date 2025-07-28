@@ -95,10 +95,14 @@ export const createUserProfile = async (
       await setDoc(userRef, {
         uid: user.uid,
         email: user.email,
-        name: name || user.displayName || '',
+        username: name || user.displayName || '',
         photoURL: photoURL || user.photoURL || '',
         createdAt,
         lastSignIn: createdAt,
+        onboardingComplete: false,
+        joyfulThings: [],
+        deprivingThings: [],
+        mindsetPrompts: [],
       })
     }
     
