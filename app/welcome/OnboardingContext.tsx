@@ -1,4 +1,4 @@
-// /app/(welcome)/OnboardingContext.tsx
+// /app/welcome/OnboardingContext.tsx
 'use client';
 
 import { createContext, useState, useContext, ReactNode } from 'react';

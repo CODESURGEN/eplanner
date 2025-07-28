@@ -1,0 +1,42 @@
+# .github/workflows/firebase-deploy.yml
+
+name: Build and Deploy to Firebase Hosting
+
+# This action will trigger on every push to the 'master' branch (updated from 'main')
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest 
+
+    steps:
+      # 1. Check out the repository code
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      # 2. Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Specify your Node.js version
+          cache: 'npm'
+
+      # 3. Install project dependencies
+      - name: Install Dependencies
+        run: npm ci # 'ci' is faster and more reliable for CI/CD environments
+
+      # 4. Build the Next.js application for static export
+      - name: Build Project
+        run: npm run build
+
+      # 5. Deploy the built application to Firebase Hosting
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}' # Required for the action
+          firebaseServiceAccount: '${{ secrets.FIREBASE_TOKEN }}' # The secret you created
+          channelId: live # Deploy to the 'live' channel
+          projectId: e-planner-74dea # Your Firebase project ID

@@ -1,4 +1,4 @@
-// /app/(welcome)/layout.tsx
+// /app/welcome/layout.tsx
 import { OnboardingProvider } from './OnboardingContext';
 
 export default function WelcomeLayout({
